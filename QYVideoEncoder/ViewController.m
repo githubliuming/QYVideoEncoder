@@ -19,5 +19,17 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSURL * url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    
+    if([[UIApplication sharedApplication] canOpenURL:url]) {
+        
+        NSURL*url =[NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        
+        [[UIApplication sharedApplication] openURL:url];
+        
+    }
+}
 
 @end
